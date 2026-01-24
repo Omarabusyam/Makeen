@@ -1,4 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
+import { SITE_CONFIG } from '../constants';
 
 interface NavigationProps {
   onNavigate: (page: string) => void;
@@ -21,7 +23,8 @@ const Navigation: React.FC<NavigationProps> = ({ onNavigate, currentPage }) => {
           onClick={() => onNavigate('home')} 
           className="text-2xl font-black tracking-tighter cursor-pointer hover:opacity-70 transition-opacity"
         >
-          عمر أبو صيام<span className="text-brand-accent italic">.</span>
+          {/* لتغيير اللوجو لصورة، استبدل النص أدناه بـ <img src="logo.png" className="h-8" /> */}
+          {SITE_CONFIG.name}<span className="text-brand-accent italic">{SITE_CONFIG.logoTagline}</span>
         </div>
         
         <div className="hidden md:flex items-center gap-10">
