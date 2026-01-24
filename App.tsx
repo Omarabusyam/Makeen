@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import AiAssistant from './components/AiAssistant';
-import { PRODUCTS, SERVICES } from './constants';
-import { ShoppingBag, Sparkles, Target, Zap, ArrowRight, CheckCircle2, MessageCircle } from 'lucide-react';
+import { PRODUCTS, SERVICES, SITE_CONFIG } from './constants';
+import { ShoppingBag, Sparkles, Target, CheckCircle2, MessageCircle, ArrowRight } from 'lucide-react';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -20,20 +21,22 @@ const App: React.FC = () => {
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-brand-dark text-white mb-10 shadow-2xl">
             <span className="w-2 h-2 rounded-full bg-brand-accent animate-pulse"></span>
-            <span className="text-[10px] font-bold tracking-[0.2em] uppercase">الإصدار 2.0 من نظام مكين</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] uppercase">{SITE_CONFIG.hero.badge}</span>
           </div>
           <h1 className="text-6xl md:text-[110px] font-black leading-[0.9] mb-12 tracking-tighter text-gradient pb-6">
-            نحن لا نصنع محتوى، <br/><span className="italic font-light">نحن نبني إرثاً.</span>
+            {SITE_CONFIG.hero.mainTitle} <br/><span className="italic font-light">{SITE_CONFIG.hero.subTitle}</span>
           </h1>
           <p className="text-xl md:text-2xl text-zinc-500 max-w-3xl mx-auto leading-relaxed mb-16 font-light">
-            مستشار استراتيجي يساعدك على تحويل خبرتك المتراكمة إلى براند شخصي ومنظومة معرفية تدر الدخل وتبني الأثر.
+            {SITE_CONFIG.hero.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <button onClick={() => setCurrentPage('makeen')} className="bg-brand-dark text-white px-14 py-6 rounded-2xl font-bold hover:bg-brand-accent transition-all shadow-2xl shadow-black/10 flex items-center gap-3 group">
-              اكتشف منهجية مكين
+              {SITE_CONFIG.hero.primaryBtn}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-[-5px] transition-transform" />
             </button>
-            <button onClick={() => setCurrentPage('consultation')} className="bg-white border-2 border-zinc-100 text-brand-dark px-14 py-6 rounded-2xl font-bold hover:border-brand-accent transition-all">احجز جلسة استشارية</button>
+            <button onClick={() => setCurrentPage('consultation')} className="bg-white border-2 border-zinc-100 text-brand-dark px-14 py-6 rounded-2xl font-bold hover:border-brand-accent transition-all">
+              {SITE_CONFIG.hero.secondaryBtn}
+            </button>
           </div>
         </div>
       </section>
@@ -158,7 +161,7 @@ const App: React.FC = () => {
                     <h3 className="text-2xl font-bold mb-4">{s.title}</h3>
                     <div className="text-5xl font-black text-brand-dark mb-8 tracking-tighter"><span className="text-2xl text-zinc-300 font-light">$</span>{s.price}</div>
                     <p className="text-zinc-400 mb-12 text-sm leading-relaxed">{s.description}</p>
-                    <a href={`mailto:omarabusam@gmail.com?subject=Consultation Request`} className="flex items-center justify-center gap-3 w-full bg-brand-dark text-white py-6 rounded-2xl font-bold hover:bg-brand-accent transition-all group">
+                    <a href={`mailto:${SITE_CONFIG.contact.email}?subject=Consultation Request`} className="flex items-center justify-center gap-3 w-full bg-brand-dark text-white py-6 rounded-2xl font-bold hover:bg-brand-accent transition-all group">
                       <MessageCircle className="w-5 h-5 group-hover:rotate-12 transition-transform" />
                       تأكيد الموعد
                     </a>
