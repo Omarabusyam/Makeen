@@ -1,4 +1,24 @@
 
+export const SITE_CONFIG = {
+  name: "عمر أبو صيام",
+  title: "استراتيجي صناعة المحتوى",
+  logoTagline: ".",
+  hero: {
+    badge: "الإصدار 2.0 من نظام مكين",
+    mainTitle: "نحن لا نصنع محتوى،",
+    subTitle: "نحن نبني إرثاً.",
+    description: "مستشار استراتيجي يساعدك على تحويل خبرتك المتراكمة إلى براند شخصي ومنظومة معرفية تدر الدخل وتبني الأثر.",
+    primaryBtn: "اكتشف منهجية مكين",
+    secondaryBtn: "احجز جلسة استشارية"
+  },
+  contact: {
+    email: "omarabusam@gmail.com",
+    linkedin: "#",
+    twitter: "#",
+    instagram: "#"
+  }
+};
+
 export const PRODUCTS = [
   { 
     id: 'p1', 
